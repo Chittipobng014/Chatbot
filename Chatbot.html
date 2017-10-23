@@ -57,6 +57,7 @@
                 						<div class="macro" style="margin:auto;width: 50%" align="center">
 
                    						    <input onkeydown="enter(event)" name="" id="sub" type="text/reset" placeholder="Message" style="height: 50px;width: 100%">
+                   						    <audio id="audio" src="http://www.soundjay.com/button/beep-07.wav" autostart="false" ></audio>
 			    						</div>
             						</div>
 
@@ -120,11 +121,11 @@
 	//d582620c-e1f3-47a8-be08-a5efa5825d27
 	//eb2d9858-9fa7-47f1-b2e4-b0714a320a42
 	function เอาApiมา() {
-		
+		var sound = document.getElementById("audio");
 		$.getJSON('https://cors-anywhere.herokuapp.com/http://sandbox.api.simsimi.com/request.p?key=d582620c-e1f3-47a8-be08-a5efa5825d27&lc=th&ft=1.0&text='+c, function(jd) {
                   
                   insertChat("me",jd.response,0)
-                  
+                  sound.play();
                });
 		
 		
