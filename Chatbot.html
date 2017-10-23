@@ -58,8 +58,8 @@
                 						<div class="macro" style="margin:auto;width: 50%" align="center">
 
                    						    <input onkeydown="enter(event)" name="" id="sub" type="text/reset" placeholder="Message" style="height: 50px;width: 100%;border-radius: 6px;border: 0px;">
-                   						    <button class="button button5" onclick="resetChat()" style="height: 50px;width: 150px">Clear</button>
-                   						    <button class="button button5" onclick="changColor()" id="ch" style="height: 50px;width: 150px">Color</button>
+                   						    <button class="button button5" onclick="resetChat()" style="height: 50px;width: 150px;border-radius: 5px;">Clear</button>
+                   						    <button class="button button5" onclick="changColor()" id="ch" style="height: 50px;width: 150px;border-radius: 5px;">Color</button>
                    						    <audio id="audio" src="http://www.soundjay.com/button/beep-07.wav" autostart="false" ></audio>
 			    						</div>
             						</div>
@@ -116,7 +116,7 @@
 var i=0;
 	function changColor(){
 
-		var code = ["#01DF74","#9FA03C","#4D75EC","#85349B","#4fc3f7"];
+		var code = ["#9FA03C","#4D75EC","#85349B","#4fc3f7","#6cc88a"];
 		
 		
 		
@@ -124,10 +124,10 @@ var i=0;
 		if(i >4){
 			i=0;
 		}
-		
+		console.log(i);
 		if(document.getElementById('ch').onclick){
 
-			document.body.style.backgroundColor = code[i];
+			document.getElementById('page-2').style.backgroundColor = code[i];
 			
 
 		}
