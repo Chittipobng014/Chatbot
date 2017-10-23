@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<title>Domb Chatbot</title>
+		<title>Dumb Chatbot</title>
 		<meta name="description" content="Page Loading Effects: Modern ways of revealing new content" />
 		<meta name="keywords" content="page loading, svg animation, loading effect, fullscreen svg" />
 		<meta name="author" content="Codrops" />
@@ -28,7 +28,7 @@
 				<!-- Top Navigation -->
 				<div class="codrops-top clearfix">
 					
-				</div>
+			</div>
 				<header class="codrops-header">
 					<h1>Dumb Chatbot</h1>
 				</header>
@@ -46,7 +46,12 @@
 			<div class="container" id="page-2" >
 				<!-- Top Navigation -->
 				<div class="codrops-top clearfix">
-					
+					<button onclick="myFunction()" class="dropbtn">Language</button>
+ 						<div id="myDropdown" class="dropdown-content">
+ 						<a href="#" onclick="thLang()">TH</a>
+   						<a href="#" onclick="enLang()">EN</a>
+    					<a href="#" onclick="chLang()">CH</a>
+ 						</div>
 				</div>
 				
 					<div  class="frame" align="center">
@@ -109,6 +114,30 @@
 				init();
 			})();
 
+			// Dropdown-------------------------------------------------------
+
+
+				/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
 
 			// API-----------------------------------------------
 	var c;
@@ -147,7 +176,7 @@ var i=0;
 	//eb2d9858-9fa7-47f1-b2e4-b0714a320a42
 	function เอาApiมา() {
 		var sound = document.getElementById("audio");
-		$.getJSON('https://cors-anywhere.herokuapp.com/http://sandbox.api.simsimi.com/request.p?key=d582620c-e1f3-47a8-be08-a5efa5825d27&lc=th&ft=1.0&text='+c, function(jd) {
+		$.getJSON('https://cors-anywhere.herokuapp.com/http://sandbox.api.simsimi.com/request.p?key=d582620c-e1f3-47a8-be08-a5efa5825d27&lc='+lang+'&ft=1.0&text='+c, function(jd) {
                   
                   insertChat("me",jd.response,0)
                   sound.play();
@@ -170,6 +199,23 @@ var i=0;
 		}
 		}
 	}
+
+	//change language-------------------------------------------------------------------
+	var lang ="th";
+	function enLang () {
+        lang = "en";
+        console.log(lang);
+    }
+    function thLang () {
+        lang = "th";
+        console.log(lang);
+    }
+    function chLang () {
+        lang = "ch";
+        console.log(lang);
+    }
+
+
 		</script>
 	</body>
 </html>
