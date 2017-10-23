@@ -4,11 +4,11 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<title>Page Loading Effects | Demo 7</title>
+		<title>Domb Chatbot</title>
 		<meta name="description" content="Page Loading Effects: Modern ways of revealing new content" />
 		<meta name="keywords" content="page loading, svg animation, loading effect, fullscreen svg" />
 		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="../favicon.ico">
+		
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
@@ -17,6 +17,7 @@
 		<link rel="stylesheet" type="text/css" href="css.css">
 		
 		<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+		
 		<!--[if IE]>
   		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -42,12 +43,12 @@
 		</div><!-- /container -->
 
 			<!-- The new page dummy; this would be dynamically loaded content -->
-			<div class="container" id="page-2">
+			<div class="container" id="page-2" >
 				<!-- Top Navigation -->
 				<div class="codrops-top clearfix">
 					
 				</div>
-				<section>
+				
 					<div  class="frame" align="center">
 						
 								
@@ -57,6 +58,8 @@
                 						<div class="macro" style="margin:auto;width: 50%" align="center">
 
                    						    <input onkeydown="enter(event)" name="" id="sub" type="text/reset" placeholder="Message" style="height: 50px;width: 100%;border-radius: 6px;border: 0px;">
+                   						    <button class="button button5" onclick="resetChat()" style="height: 50px;width: 150px">Clear</button>
+                   						    <button class="button button5" onclick="changColor()" id="ch" style="height: 50px;width: 150px">Color</button>
                    						    <audio id="audio" src="http://www.soundjay.com/button/beep-07.wav" autostart="false" ></audio>
 			    						</div>
             						</div>
@@ -64,7 +67,7 @@
     				</div>        
 					
 					
-				</section>
+				
 			</div><!-- /container -->
 
 			<div id="loader" class="pageload-overlay" data-opening="M 0,60 80,60 80,50 0,40 0,60;M 0,60 80,60 80,25 0,40 0,60;M 0,60 80,60 80,25 0,10 0,60;M 0,60 80,60 80,0 0,0 0,60" data-closing="M 0,60 80,60 80,20 0,0 0,60;M 0,60 80,60 80,20 0,40 0,60;m 0,60 80,0 0,0 -80,0">
@@ -110,6 +113,28 @@
 			// API-----------------------------------------------
 	var c;
 	var value;
+var i=0;
+	function changColor(){
+
+		var code = ["#01DF74","#9FA03C","#4D75EC","#85349B","#4fc3f7"];
+		
+		
+		
+		i++;
+		if(i >4){
+			i=0;
+		}
+		
+		if(document.getElementById('ch').onclick){
+
+			document.body.style.backgroundColor = code[i];
+			
+
+		}
+
+
+	}
+
 	function show(){
 		
 		เอาApiมา();

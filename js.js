@@ -26,7 +26,8 @@ function insertChat(who, text, time = 0){
     
     if (who == "me"){
         
-        control = '<li style="width:50%;font-size: 20;padding-bottom: 8px;">' +
+        control ='<div">'+ 
+                    '<li style="width:50%;font-size: 20;padding-bottom: 8px;">' +
                         '<div class="msj macro" style="height:120px;">' +
                         '<div class="avatar"><img class="img-circle" style="width:55%;" src="'+ me.avatar +'" /></div>' +
                             '<div class="text text-l">' +
@@ -34,16 +35,19 @@ function insertChat(who, text, time = 0){
                                 '<p><small>'+date+'</small></p>' +
                             '</div>' +
                         '</div>' +
-                    '</li>';                    
+                    '</li>'+
+                    '</div>';                    
     }else{
-        control = '<li style="width:50%;font-size: 20;padding-bottom: 8px">' +
+        control ='<div">'+
+                     '<li style="width:50%;font-size: 20;padding-bottom: 8px">' +
                         '<div class="msj-rta macro" style="height:120px;"">' +
                             '<div class="text text-r">' +
                                 '<p style="text-align:right;color: black;";>'+text+'</p>' +
                                 '<p style="text-align:left"><small>'+date+'</small></p>' +
                             '</div>' +
                         '<div class="avatar" style="padding:0px 0px 0px 10px !important"><img class="img-circle" style="width:55%;" src="'+you.avatar+'" /></div>' +                                
-                  '</li>';
+                  '</li>'+
+                  '</div>';
     }
     setTimeout(
         function(){                        
@@ -57,15 +61,7 @@ function resetChat(){
     $("ul").empty();
 }
 
-$(".mytext").on("keyup", function(e){
-    if (e.which == 13){
-        var text = $(this).val();
-        if (text !== ""){
-            insertChat("me", text);              
-            $(this).val('');
-        }
-    }
-});
+
 
 
 //-- Clear Chat
